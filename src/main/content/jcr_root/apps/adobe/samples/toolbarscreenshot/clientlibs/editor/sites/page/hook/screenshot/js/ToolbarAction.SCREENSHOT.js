@@ -18,6 +18,7 @@
  * #L%
  */
 (function ($, ns, channel, window, undefined) {
+    "use strict";
 
     /**
      *
@@ -48,20 +49,27 @@
     /**
      * Defines the "Screenshot" Toolbar Action
      *
-     * @type {Granite.author.ui.ToolbarAction}
+     * @type Granite.author.ui.ToolbarAction
+     * @alias SCREENSHOT
      */
-    var screenshotAction = {
+
+    var screenshotAction = new ns.ui.ToolbarAction({
+        name: ACTION_NAME,
         icon: ACTION_ICON,
         text: ACTION_TITLE,
-        handler: function (editable) {
+        execute: function (editable) {
             html2canvas(editable.dom, {
                 onrendered: function(canvas) {
                     var img = canvas.toDataURL();
                     window.open(img);
                 }
             });
-        }
-    };
+        },
+        condition: function (editable) {
+            return !!(editable && editable.dom);
+        },
+        isNonMulti: true
+    });
 
 
     /**

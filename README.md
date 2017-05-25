@@ -1,4 +1,4 @@
-# Adobe Experience Manager 6.2 Extension: Add a custom Toolbar Action in Sites Page Editor
+# Adobe Experience Manager 6.3 Extension: Add a custom Toolbar Action in Sites Page Editor
 
 This is a sample package showing how to create a custom Toolbar Action to render components. Thanks to [HTML2Canvas](https://github.com/niklasvh/html2canvas) project
 
